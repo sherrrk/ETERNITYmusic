@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETERNIX</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+margin: 0;
+background: radial-gradient(circle at center, #0a0f1f 0%, #000 70%);
+overflow-x: hidden;
+color: white;
+font-family: 'Noto Serif KR', serif;
+}
+
+/* 별 배경 */
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+background:transparent;
+overflow:hidden;
+}
+
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+opacity:0.3;
+animation:twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:0.1;}
+to{opacity:0.8;}
+}
+
+/* 중앙 컨텐츠 */
+
+.container{
+text-align:center;
+padding-top:20vh;
+}
+
+/* 북극성 */
+
+.polaris{
+font-size:40px;
+animation:pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse{
+from{opacity:0.4; transform:scale(0.9);}
+to{opacity:1; transform:scale(1.2);}
+}
+
+/* 로고 */
+
+.logo{
+margin-top:40px;
+width:400px;
+max-width:80%;
+filter:invert(1) brightness(2) drop-shadow(0 0 15px white);
+opacity:0;
+animation:fadeIn 2s ease forwards;
+animation-delay:2s;
+}
+
+@keyframes fadeIn{
+to{opacity:1;}
+}
+
+/* 태그라인 */
+
+.tagline{
+margin-top:30px;
+font-family:'Song Myung',serif;
+font-size:20px;
+letter-spacing:4px;
+opacity:0;
+animation:fadeIn 2s ease forwards;
+animation-delay:3s;
+text-shadow:0 0 10px rgba(255,255,255,0.6);
+}
+
+/* 트랙 */
+
+.tracks{
+margin-top:100px;
+opacity:0;
+animation:fadeIn 2s ease forwards;
+animation-delay:4s;
+}
+
+.track{
+margin:60px 0;
+}
+
+/* 썸네일 */
+
+.thumb{
+position:relative;
+width:560px;
+max-width:90%;
+margin:auto;
+display:block;
+}
+
+.thumb img{
+width:100%;
+border-radius:8px;
+}
+
+/* 재생 아이콘 */
+
+.play{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:70px;
+color:white;
+text-shadow:0 0 20px black;
+pointer-events:none;
+}
+
+.footer{
+margin-top:80px;
+margin-bottom:60px;
+font-size:12px;
+opacity:0.4;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+
+<div class="polaris">✦</div>
+
+<img src="logo.png" class="logo">
+
+<div class="tracks">
+
+<div class="track">
+<h2>『ETERNIX』</h2>
+<a class="thumb" href="https://www.youtube.com/watch?v=EiEM1xUgbYk" target="_blank">
+<img src="https://img.youtube.com/vi/EiEM1xUgbYk/hqdefault.jpg">
+<div class="play">▶</div>
+</a>
+</div>
+
+<div class="track">
+<h2>『Remember me』</h2>
+<a class="thumb" href="https://www.youtube.com/watch?v=Z23JRMainy8" target="_blank">
+<img src="https://img.youtube.com/vi/Z23JRMainy8/hqdefault.jpg">
+<div class="play">▶</div>
+</a>
+</div>
+
+<div class="track">
+<h2>『Still calling...』</h2>
+<a class="thumb" href="https://www.youtube.com/watch?v=WqWF_-C9Fq4" target="_blank">
+<img src="https://img.youtube.com/vi/WqWF_-C9Fq4/hqdefault.jpg">
+<div class="play">▶</div>
+</a>
+</div>
+
+<div class="track">
+<h2>『나를 찾을 수 있게(Find me)』</h2>
+<a class="thumb" href="https://www.youtube.com/watch?v=TRidCgir73M" target="_blank">
+<img src="https://img.youtube.com/vi/TRidCgir73M/hqdefault.jpg">
+<div class="play">▶</div>
+</a>
+</div>
+
+<div class="track">
+<h2>『To the edge』</h2>
+<a class="thumb" href="https://www.youtube.com/watch?v=97ePR3ijhCg" target="_blank">
+<img src="https://img.youtube.com/vi/97ePR3ijhCg/hqdefault.jpg">
+<div class="play">▶</div>
+</a>
+</div>
+
+</div>
+
+<div class="footer">Song created By SUNO</div>
+
+</div>
+
+<script>
+
+/* 랜덤 별 생성 */
+
+const starsContainer=document.querySelector(".stars");
+
+for(let i=0;i<150;i++){
+
+let star=document.createElement("div");
+
+star.classList.add("star");
+
+star.style.top=Math.random()*100+"%";
+star.style.left=Math.random()*100+"%";
+star.style.animationDuration=(Math.random()*3+2)+"s";
+
+starsContainer.appendChild(star);
+
+}
+
+</script>
+
+</body>
+</html>
